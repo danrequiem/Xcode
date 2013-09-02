@@ -19,6 +19,10 @@
     label.text = @"Hola Mundo";
 
 }
+-(IBAction)Click2:(id)sender{
+    
+    label.text = Texto.text;
+}
 
 - (void)viewDidLoad
 {

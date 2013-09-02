@@ -11,10 +11,13 @@
 @interface ViewController : UIViewController{
 
     IBOutlet UILabel *label;
+    IBOutlet UITextField *Texto;
+
 
     
 }
 
 -(IBAction)Click:(id)sender;
+-(IBAction)Click2:(id)sender;
 
 @end

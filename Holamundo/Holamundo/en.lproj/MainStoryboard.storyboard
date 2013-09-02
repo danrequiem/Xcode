@@ -18,11 +18,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9z7-jH-GF8">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="228" id="DfC-rY-qQA"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Haz Click Aquí">
+                                <state key="normal" title="1">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -30,20 +27,46 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Click:" destination="2" eventType="touchDragInside" id="0yF-lz-XR8"/>
                                     <action selector="Click:" destination="2" eventType="touchUpInside" id="XxB-wD-IaC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTM-Gb-zFm">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="2">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Click2:" destination="2" eventType="touchUpInside" id="Lhs-yG-0pJ"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NpH-qX-Rjw">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="228" id="9sA-7T-QMr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9Sr-rN-oSq" firstAttribute="centerX" secondItem="9z7-jH-GF8" secondAttribute="centerX" type="default" id="5Fo-6r-q60"/>
-                            <constraint firstItem="9z7-jH-GF8" firstAttribute="top" secondItem="3" secondAttribute="top" constant="75" id="hU4-NY-nRw"/>
-                            <constraint firstItem="9Sr-rN-oSq" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="iMq-mr-hy8"/>
-                            <constraint firstItem="9Sr-rN-oSq" firstAttribute="top" secondItem="3" secondAttribute="top" constant="37" id="jsi-cB-zLj"/>
+                            <constraint firstItem="NpH-qX-Rjw" firstAttribute="centerX" secondItem="9Sr-rN-oSq" secondAttribute="centerX" type="default" id="6Vq-GC-nC5"/>
+                            <constraint firstItem="zTM-Gb-zFm" firstAttribute="top" secondItem="9z7-jH-GF8" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ilw-4V-bXp"/>
+                            <constraint firstItem="zTM-Gb-zFm" firstAttribute="leading" secondItem="9z7-jH-GF8" secondAttribute="leading" type="default" id="LSK-bc-J8Q"/>
+                            <constraint firstItem="zTM-Gb-zFm" firstAttribute="trailing" secondItem="9z7-jH-GF8" secondAttribute="trailing" type="default" id="YUX-lt-Xu8"/>
+                            <constraint firstItem="9z7-jH-GF8" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="iC4-D4-JrE"/>
+                            <constraint firstItem="NpH-qX-Rjw" firstAttribute="trailing" secondItem="9z7-jH-GF8" secondAttribute="trailing" type="default" id="nJQ-83-5WB"/>
+                            <constraint firstItem="9z7-jH-GF8" firstAttribute="leading" secondItem="NpH-qX-Rjw" secondAttribute="leading" type="default" id="njE-96-T6U"/>
+                            <constraint firstItem="9Sr-rN-oSq" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="pwp-Zz-enJ"/>
+                            <constraint firstItem="9z7-jH-GF8" firstAttribute="top" secondItem="NpH-qX-Rjw" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="qtN-nu-LuC"/>
+                            <constraint firstItem="NpH-qX-Rjw" firstAttribute="top" secondItem="3" secondAttribute="top" constant="61" id="rKK-oU-lB4"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Texto" destination="NpH-qX-Rjw" id="cu2-Xx-3JM"/>
                         <outlet property="label" destination="9Sr-rN-oSq" id="Xt9-Ic-ngV"/>
                     </connections>
                 </viewController>
@@ -58,7 +81,9 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
+                <relationship kind="action" name="Click2:"/>
                 <relationship kind="action" name="Click:"/>
+                <relationship kind="outlet" name="Texto" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="label" candidateClass="UILabel"/>
             </relationships>
         </class>
